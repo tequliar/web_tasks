@@ -74,9 +74,13 @@ fp.close()
 ****
 ### 截图
 
-![爬取过程中](https://github.com/hyacinthee/web_tasks/blob/master/P2/PhotoSpider.png)
+##### 爬取过程中
 
-![爬取结果](https://github.com/hyacinthee/web_tasks/blob/master/P2/result.png)
+![img](https://github.com/hyacinthee/web_tasks/blob/master/P2/PhotoSpider.png)
+
+##### 爬取结果
+
+![img](https://github.com/hyacinthee/web_tasks/blob/master/P2/result.png)
 
 *****
 ### 相关爬虫
