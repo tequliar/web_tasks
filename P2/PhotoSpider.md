@@ -1,5 +1,5 @@
 ## 图片爬虫(PhotoSpider)
-这是一篇关于图片爬虫的简要说明
+这是一篇关于[图片爬虫](https://github.com/hyacinthee/web_tasks/blob/master/P2/PhotoSpider.py)的简要说明
 *****************
 ### 爬虫目的
 爬取图片网站某一主题的图片并保存在本地
@@ -10,7 +10,7 @@ python
 ### 调用库
 re(正则表达式)、requests(仅用于保存图片)
 ### 爬取结果
-成功爬取了关于book这个主题的 张图片
+成功爬取了关于book这个主题的77张图片
 *****************
 ### 网页分析
 首先使用chrome的查看网页源代码功能找到本次爬虫的目标，通过使用定位功能定位到某张图片的具体代码   
@@ -74,11 +74,12 @@ fp.close()
 ****
 ### 截图
 
-爬取过程中
-![image](E:\work\spider\PhotoSpider.png)
+![爬取过程中](file:///E:\work\spider\PhotoSpider.png)
 
-爬取结果
-![image](E:\work\spider\result.png)
+![爬取结果](file:///E:\work\spider\result.png)
 
 *****
 ### 相关爬虫
+[文字爬虫(TextSpider)](https://github.com/hyacinthee/web_tasks/blob/master/P2/TextSpider.py)
+
+[文字爬虫的说明](https://github.com/hyacinthee/web_tasks/blob/master/P2/TextSpider.md)
