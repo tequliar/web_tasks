@@ -20,7 +20,7 @@
 
 [图片爬虫网页源代码](https://github.com/hyacinthee/web_tasks/blob/master/P2/source.txt)
 
-[图片爬虫爬取过程截图](https://github.com/hyacinthee/web_tasks/blob/master/P2/TextSpider.py)
+[图片爬虫爬取过程截图](https://github.com/hyacinthee/web_tasks/blob/master/P2/PhotoSpider.png)
 
 [图片爬虫爬取结果截图](https://github.com/hyacinthee/web_tasks/blob/master/P2/result.png)
 
