@@ -39,8 +39,8 @@ class为"d_post_content j_d_post_content "的div标签下记录了用户的发�
 
 class为"tail-info"的span标签下记录用户的发言楼层以及发言时间
 
-另外需要特别注意的是发言内容中存在大量<br>标签，输出时需要将其替换掉
-其次个别内容还含有<a>标签，也需要将其消除
+另外需要特别注意的是发言内容中存在大量`<br>`标签，输出时需要将其替换掉
+其次个别内容还含有`<a>`标签，也需要将其消除
 
 由此可以有针对性的爬取相应的信息，开始搭建爬虫
 
@@ -85,12 +85,12 @@ if author[each] != author[0]:
 f.writelines(u'回帖楼层：' + unicode(level[each]) + '\n\n')
 ```
 
-将<a>标签中的链接去掉
+将`<a>`标签中的链接去掉
 ```
 re.sub('<a (.*?)</a>', ' ', content[each])
 ```
 
-输出回帖内容，同时将所有的<br>标签替换为换行，调用unicode()来识别unicode编码
+输出回帖内容，同时将所有的`<br>`标签替换为换行，调用unicode()来识别unicode编码
 ```
 f.writelines(u'回帖内容：' + unicode(content[each].replace('<br>', '\n')) + '\n')
 ```
