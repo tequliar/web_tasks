@@ -1,5 +1,7 @@
 # coding=utf-8
 
+# 更多说明请访问 https://github.com/hyacinthee/web_tasks/blob/master/P2/TextSpider.md
+
 import re
 import requests
 import sys
