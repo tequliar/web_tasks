@@ -4,42 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>登录</title>
-    <script src="jquery-3.2.1.min.js"></script>
-    <script src="jquery.mobile-1.4.5.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <script src="change.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="back_ground">
-    <div data-role="header" id="top">
+<div data-role="page" id="back_ground">
+    <div id="top">
 
     </div>
 
     <div role="main" class="ui-content" id="body">
-        <br/>
-        <div id="body_content">
+        <div id="welcome">
             <p>~~欢迎加入我们~~</p>
-            <form action="" method="post">
-                <!--<form action="Service.php" method="post">    -->
-                <label for="user_name">User name:</label>
-                <input type="text" name="user_name" id="user_name" value="">
-                <br/>
-                <label for="Password">Password:</label>
-                <input type="password" name="password" id="Password" value="" autocomplete="off">
-                <br/>
-                <input type="checkbox">保存密码
+        </div>
+        <div id="inputText">
+            <!--<form action="" method="post">-->
+            <form action="Service.php" method="post">
+                <input type="text" name="user_name" id="user_name" placeholder="用户名" value="">
+                <div style="width: 15%; float: right;">
+                    <label class="ui-shadow ui-btn ui-corner-all ui-mini" id="click" onclick="change()">SHOW</label>
+                </div>
+                <div style="width: 80%; height: 45px;">
+                    <input type="password" name="password" id="password" placeholder="密码" value="">
+                </div>
+                <input type="checkbox" name="checkbox" id="checkbox" checked="">
+                <label for="checkbox">保存密码</label>
                 <br/>
                 <button type="submit">登录</button>
                 <button type="button">注册</button>
                 <br/>
-                <p>更多信息请访问http://github.com/hyacinthee/</p>
             </form>
         </div>
+        <div id="information">
+            <p>更多信息请访问http://github.com/hyacinthee/</p>
+        </div>
     </div>
-
-    <div data-role="footer" id="bottom">
-
+    <div id="bottom">
     </div>
 </div>
+<script>
+    var isShow = true;
+    function change() {
+        var ps = document.getElementById("password");
+        var la = document.getElementById("click");
+        if (isShow) {
+            ps.type = "text";
+            la.innerHTML = "HIDE";
+            isShow = false;
+        } else {
+            ps.type = "password";
+            la.innerHTML = "SHOW";
+            isShow = true;
+        }
+    }
+</script>
 </body>
 </html>
