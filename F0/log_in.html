@@ -6,18 +6,40 @@
     <title>登录</title>
     <script src="jquery-3.2.1.min.js"></script>
     <script src="jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+    <link type="text/css" rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div data-role="header">
+<div id="back_ground">
+    <div data-role="header" id="top">
 
     </div>
-    <div role="main" class="ui-content">
+
+    <div role="main" class="ui-content" id="body">
+        <br/>
+        <div id="body_content">
+            <p>~~欢迎加入我们~~</p>
+            <form action="" method="post">
+                <!--<form action="Service.php" method="post">    -->
+                <label for="user_name">User name:</label>
+                <input type="text" name="user_name" id="user_name" value="">
+                <br/>
+                <label for="Password">Password:</label>
+                <input type="password" name="password" id="Password" value="" autocomplete="off">
+                <br/>
+                <input type="checkbox">保存密码
+                <br/>
+                <button type="submit">登录</button>
+                <button type="button">注册</button>
+                <br/>
+                <p>更多信息请访问http://github.com/hyacinthee/</p>
+            </form>
+        </div>
+    </div>
+
+    <div data-role="footer" id="bottom">
 
     </div>
-    <div data-role="footer">
-
-    </div>
+</div>
 </body>
 </html>
