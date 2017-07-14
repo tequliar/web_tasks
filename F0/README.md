@@ -10,7 +10,7 @@
 ### 调用库  
 [jQuery](http://code.jquery.com/jquery-1.11.1.min.js) , [jQuery.mobile](http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js)
 ### 文件功能  
-用户登录、简单处理登录信息(显示用户名密码)、保存密码、注册按钮、密码的现实与隐藏
+用户登录、处理提交信息(显示用户名密码)、保存密码、登录及注册按钮、密码的显示与隐藏
 
 
 
