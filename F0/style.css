@@ -1,54 +1,55 @@
-*{
+/*********************以下为网页整体部分********************/
+
+/*消除所有标签的margin属性*/
+* {
     margin: 0px;
 }
 
-#back_ground{
+/*设置网页背景，加入图片*/
+#back_ground {
     width: 100%;
     height: auto;
     background-image: url("../picture/backGround.jpg");
 }
 
-#top{
+
+/*********************以下为网页顶部********************/
+#top {
     background-color: black;
     height: 50px;
     width: 100%;
 }
 
-#body{
+/*********************以下为网页主体********************/
+#body {
     margin: 50px auto;
     background-color: white;
     width: 50%;
     height: 503px;
-    filter:alpha(opacity=50);
-    /*-moz-opacity: 0.8;*/
-    /*-khtml-opacity:0.8;*/
+    /*以下设置body标签的透明属性*/
+    filter: alpha(opacity=50);
     opacity: 0.75;
 }
 
-#welcome{
-    text-align: center;
+#welcome {
+    text-align: center; /*居中*/
     font-size: 20px;
 }
 
-#inputText{
+#inputText {
     margin-left: 80px;
     margin-right: 80px;
-    text-align: center;
+    text-align: center; /*居中*/
 }
 
-#information{
-    text-align: center;
+#information {
+    text-align: center; /*居中*/
 }
 
-#bottom{
+/*********************以下为网页底部部分********************/
+#bottom {
     width: 100%;
     height: 50px;
     background-color: black;
-
-}
-
-#hideShowPassword{
-    position: relative;
-    display: block;
 }
 
