@@ -12,7 +12,7 @@
 #back_ground {
     width: 100%;
     height: auto;
-    background-image: url("https://github.com/hyacinthee/web_tasks/blob/master/F0/picture/backGround.jpg");
+    background-image: url("../picture/backGround.jpg");
 }
 
 
@@ -40,8 +40,8 @@
 }
 
 #inputText {
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 25%;
+    margin-right: 25%;  /*左右各缩进25%*/
     text-align: center; /*居中*/
 }
 
