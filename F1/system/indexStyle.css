@@ -103,13 +103,17 @@
 
 /*******************以下是第三页的部分*********************/
 
-.pageThree{
-    /*background-color: #1eb450;*/
+.pageThree-text{
     margin: 2px;
     position: relative;
-    overflow: hidden;
-
 }
+
+.stu-input,.stu-change,.stu-delete,.stu-list,.stu-search{
+    /*position: absolute;*/
+    /*top:0;*/
+    display: none;
+}
+
 
 /**********设置警告栏************/
 .warningLabel{
@@ -117,4 +121,14 @@
     height:28px;
     line-height:28px;
     overflow:hidden;
+}
+
+.check-text{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/**********设置动画************/
+.stu-input-control{
+
 }
