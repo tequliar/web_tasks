@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎页</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 引入bootstrap的js和css文件，用来实现响应式布局-->
+    <link rel="stylesheet" href="https://github.com/hyacinthee/web_tasks/blob/master/F1/system/indexStyle.css" type="text/css">
+    <script src="https://github.com/hyacinthee/web_tasks/blob/master/F1/system/system.js"></script>
+</head>
+<body>
+<!-----------------------------------------------------以下是导航栏部分-------------------------------------------------------->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">学生信息管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">登录/注册 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="password/log_in.html">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https://github.com/hyacinthee/">关于我</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-------------------------------------------------以下是标题部分------------------------------------------------------------>
+<div class="pageOne-sm hidden-xs">
+    <div class="bgimg-sm hidden-xs" id="bgimg-sm"></div>
+    <div class="container">
+        <div class="row">
+            <div class="title-text">
+                <div class="col-sm-7 col-sm-offset-5 headfontsize">
+                    <h1 class="headh1content">学生信息管理系统</h1>
+                    <br/>
+                    <p>欢迎来到学生信息管理系统，在这里你可以轻松的完成学生信息的添加、查询、打印和删除工作</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pageOne-xs visible-xs">
+    <div class="bgimg-xs visible-xs" id="bgimg-xs"></div>
+    <div class="container">
+        <div class="row">
+            <div class="title-text">
+                <div class="col-sm-7 col-sm-offset-5 headfontsize">
+                    <h1 class="headh1content">学生信息管理系统</h1>
+                    <br/>
+                    <p>欢迎来到学生信息管理系统，在这里你可以轻松的完成学生信息的添加、查询、打印和删除工作</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------------------以下是功能部分------------------------------------------------------------>
+
+<div class="pageTwo">
+    <div class="pageTwo-text hidden-xs">
+        <h1 class="pageTwo-text-h1">
+            请选择您所需的功能<img src="picture/caticon.png">
+        </h1>
+    </div>
+    <div class="pageTwo-text visible-xs">
+        <h1 class="pageTwo-text-h1">
+            请选择您所需的功能
+        </h1>
+    </div>
+    <div class="row">
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a id="stu-input-control" data-toggle="collapse" href="#stu-input" aria-controls="#stu-input"
+               onclick="inputShow()">
+                <img src="picture/P1.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>信息录入</h3>
+                    <h1><strong>添加学生信息</strong></h1>
+                </div>
+            </a>
+        </div>
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a id="stu-search-control" data-toggle="collapse" href="#stu-search" aria-controls="#stu-search"
+               onclick="searchShow()">
+                <img src="picture/P2.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>信息搜索</h3>
+                    <h1><strong>搜索学生信息</strong></h1>
+                </div>
+            </a>
+        </div>
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a id="stu-change-control" data-toggle="collapse" href="#stu-change" aria-controls="#stu-change"
+               onclick="changeShow()">
+                <img src="picture/P3.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>信息修改</h3>
+                    <h1><strong>修改学生信息</strong></h1>
+                </div>
+            </a>
+        </div>
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a id="stu-list-control" data-toggle="collapse" href="#stu-list" aria-controls="#stu-list"
+               onclick="listShow(),stuListShow()">
+                <img src="picture/P4.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>信息遍历</h3>
+                    <h1><strong>遍历学生信息</strong></h1>
+                </div>
+            </a>
+        </div>
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a id="stu-delete-control" data-toggle="collapse" href="#stu-delete" aria-controls="#stu-delete"
+               onclick="deleteShow()">
+                <img src="picture/P5.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>信息删除</h3>
+                    <h1><strong>删除学生信息</strong></h1>
+                </div>
+            </a>
+        </div>
+        <div class="pageTwo-courses col-sm-2 col-md-2 col-xs-2">
+            <a>
+                <img src="picture/P6.jpg" style="width: 100%; background-position: center center;">
+                <div class="classicon">
+                    <h3>敬请期待</h3>
+                    <h1><strong>敬请期待</strong></h1>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+<!--------------------------------------------------以下是表单部分--------------------------------------------------------------->
+<div class="pageThree">
+    <div class="container">
+        <div class="pageThree-text">
+            <!-------------------------------------------------信息添加--------------------------------------------->
+            <div class="stu-input collapse" id="stu-input">
+                <div class="well">
+                    <div class="stu-input-input">
+                        <form class="form-horizontal">
+                            <h2 class="col-sm-7 col-sm-offset-5 check-text">添加学生信息</h2>
+                            <!-------添加学号------->
+                            <div class="form-group">
+                                <label for="inputID" class="col-sm-2 control-label">学号：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputID" placeholder="学号">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-input-warningId" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                            <!-------添加姓名------->
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputName" placeholder="姓名">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-input-warningName" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                            <!-------添加性别------->
+                            <div class="form-group">
+                                <label for="sex-man" class="col-sm-2 control-label">性别：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline" style="left: 20px;">
+                                        <input type="radio" name="sex" id="sex-man" value="man" checked> 男
+                                    </label>
+                                    <label class="radio-inline" style="left: 20px;">
+                                        <input type="radio" name="sex" id="sex-woman" value="woman"> 女
+                                    </label>
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-input-warningSex" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                            <!-------添加年级------->
+                            <div class="form-group">
+                                <label for="inputGrade" class="col-sm-2 control-label">年级：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputGrade" placeholder="2016">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-input-warningGrade" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                            <!-------添加专业------->
+                            <div class="form-group">
+                                <label for="inputMajor" class="col-sm-2 control-label">专业：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputMajor" placeholder="专业">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-input-warningMajor" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                            <!-------提交按钮------->
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-default " id="stu-input-submit" onclick="stuInput()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------信息搜索--------------------------------------------->
+            <div class="stu-search collapse" id="stu-search">
+                <div class="well">
+                    <div class="stu-search-search">
+                        <form class="form-horizontal">
+                            <h2 class="col-sm-7 col-sm-offset-5 check-text">搜索学生信息</h2>
+                            <div class="form-group">
+                                <label for="searchID" class="col-sm-2 control-label">请输入学号：</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="searchID" placeholder="学号"/>
+                                </div>
+                                <button type="button" class="btn btn-info btn-default col-sm-1" onclick="stuSearch()">查找</button>
+                                <label class="warningLabel bg-danger col-sm-2 col-sm-offset-1" id="stu-search-warning" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="stu-search-notFound" id="stu-search-notFound" style="display: none;">
+                        <h3 class="bg-danger col-sm-3 col-sm-offset-5" >抱歉，未能找到此人！</h3>
+                    </div>
+
+                    <div class="stu-search-show" id="stu-search-show" style="display: none;">
+                        <h3 class="col-sm-7 col-sm-offset-5 check-text">搜索信息如下</h3>
+                        <table class="table searchTable">
+                            <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年级</th>
+                                <th>专业</th>
+                            </tr>
+                            </thead>
+                            <tbody id="stu-search-show-tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------信息修改--------------------------------------------->
+            <div class="stu-change collapse" id="stu-change">
+                <div class="well">
+                    <!----------------------搜索修改信息------------------------>
+                    <div class="stu-change-search">
+                        <form class="form-horizontal">
+                            <h2 class="col-sm-7 col-sm-offset-5 check-text">修改学生信息</h2>
+                            <div class="form-group">
+                                <label for="changeID-search" class="col-sm-2 control-label">请输入学号：</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="changeID-search" placeholder="学号"/>
+                                </div>
+                                <button type="button" class="btn btn-info btn-search col-sm-1" onclick="stuChangeShow()">查找</button>
+                                <label class="warningLabel bg-danger col-sm-2 col-sm-offset-1" id="stu-change-warning" style="display: none;">未填写学号！</label>    <!--警告标签-->
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="stu-change-notFound" id="stu-change-notFound" style="display: none;">
+                        <h3 class="bg-danger col-sm-3 col-sm-offset-5" >抱歉，未能找到此人！</h3>
+                    </div>
+
+                    <!----------------------显示修改信息------------------------>
+                    <div class="stu-change-show" id="stu-change-show" style="display: none;">
+                        <h3 class="col-sm-7 col-sm-offset-5 check-text">搜索信息如下</h3>
+                        <table class="table changeTable" >
+                            <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年级</th>
+                                <th>专业</th>
+                            </tr>
+                            </thead>
+                            <tbody id="stu-change-show-tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!----------------------修改信息------------------------>
+                    <div class="stu-change-change" id="stu-change-change" style="display: none;">
+                        <form class="form-horizontal">
+                            <h2 class="col-sm-7 col-sm-offset-5 check-text">请修改信息</h2>
+                            <!-------修改学号------->
+                            <div class="form-group">
+                                <label for="changeID" class="col-sm-2 control-label">学号：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="changeID" >
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-change-warningId" style="display: none;">未填写学号！</label>    <!--警告标签-->
+                            </div>
+                            <!-------修改姓名------->
+                            <div class="form-group">
+                                <label for="changeName" class="col-sm-2 control-label">姓名：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="changeName">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-change-warningName" style="display: none;">未填写姓名！</label>    <!--警告标签-->
+                            </div>
+                            <!-------修改性别------->
+                            <div class="form-group">
+                                <label for="change-sex-man" class="col-sm-2 control-label">性别：</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline" style="left: 20px;">
+                                        <input type="radio" name="changeSex" id="change-sex-man" value="man" checked> 男
+                                    </label>
+                                    <label class="radio-inline" style="left: 20px;">
+                                        <input type="radio" name="changeSex" id="change-sex-woman" value="woman"> 女
+                                    </label>
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-change-warningSex" style="display: none;">未选择性别！</label>    <!--警告标签-->
+                            </div>
+                            <!-------修改年级------->
+                            <div class="form-group">
+                                <label for="changeGrade" class="col-sm-2 control-label">年级：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="changeGrade">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-change-warningGrade" style="display: none;">未填写年级！</label>    <!--警告标签-->
+                            </div>
+                            <!-------修改专业------->
+                            <div class="form-group">
+                                <label for="changeMajor" class="col-sm-2 control-label">专业：</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="changeMajor">
+                                </div>
+                                <label class="warningLabel bg-danger col-sm-2" id="stu-change-warningMajor" style="display: none;">未填写专业！</label>    <!--警告标签-->
+                            </div>
+                            <!--------提交按钮------>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="button" class="btn btn-default" onclick="stuChangeChange()">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------信息遍历--------------------------------------------->
+            <div class="stu-list collapse" id="stu-list">
+                <div class="well">
+                    <div class="stu-list-notFound" id="stu-list-notFound" style="display: none;">
+                        <h3 class="col-sm-4 col-sm-offset-4" >未能找到任何学生的信息！</h3>
+                    </div>
+
+                    <div class="stu-list-show" id="stu-list-show" style="display: none;">
+                        <h3 class="col-sm-7 col-sm-offset-5 check-text">全部学生信息如下：</h3>
+                        <table class="table listTable" >
+                            <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年级</th>
+                                <th>专业</th>
+                            </tr>
+                            </thead>
+                            <tbody id="stu-list-show-tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------信息删除--------------------------------------------->
+            <div class="stu-delete collapse" id="stu-delete">
+                <div class="well">
+                    <!----------------------搜索删除信息------------------------>
+                    <div class="stu-delete-search">
+                        <form class="form-horizontal">
+                            <h2 class="col-sm-7 col-sm-offset-5 check-text">删除学生信息</h2>
+                            <div class="form-group">
+                                <label for="deleteID-search" class="col-sm-2 control-label">请输入学号：</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="deleteID-search" placeholder="学号"/>
+                                </div>
+                                <button type="button" class="btn btn-info btn-search col-sm-1" onclick="stuDeleteShow()">查找</button>
+                                <label class="warningLabel bg-danger col-sm-2 col-sm-offset-1" id="stu-delete-warning" style="display: none;"></label>    <!--警告标签-->
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="stu-delete-notFound" id="stu-delete-notFound" style="display: none;">
+                        <h3 class="bg-danger col-sm-3 col-sm-offset-5" >抱歉，未能找到此人！</h3>
+                    </div>
+
+                    <!----------------------显示删除信息------------------------>
+                    <div class="stu-delete-show" id="stu-delete-show" style="display: none;">
+                        <h3 class="col-sm-7 col-sm-offset-5 check-text">搜索信息如下</h3>
+                        <table class="table deleteTable" >
+                            <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年级</th>
+                                <th>专业</th>
+                            </tr>
+                            </thead>
+                            <tbody id="stu-delete-show-tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!----------------------确认删除信息------------------------>
+                    <div class="stu-delete-check" id="stu-delete-check" style="display: none;">
+                        <h2 class="col-sm-7 col-sm-offset-5 check-text" >是否删除此人的信息？</h2>
+                        <button type="button" class="col-sm-offset-4 col-sm-2 btn btn-danger" onclick="stuDeleteCheck()">删除</button>
+                        <button type="button" class="col-sm-offset-1 col-sm-2 btn btn-default" onclick="stuDeleteCancel()">再想想</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--------------------------------------------------以下是底边栏部分-------------------------------------------------------->
+<hr>
+
+<footer>
+    <p style="padding: 0 0 5px 10px;">更多信息请见<a href="https://github.com/hyacinthee/">https://github.com/hyacinthee/</a>
+    </p>
+</footer>
+
+
+</body>
+</html>
