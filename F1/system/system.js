@@ -227,10 +227,14 @@ function stuSearch() {
     //判断表单是否为空,然后再判断输入格式是否正确
 
     if (stuId == "") {
+        document.getElementById("stu-search-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-search-notFound").style.display = "none";//隐藏警示栏
         document.getElementById("stu-search-warning").style.display = "";
         document.getElementById("stu-search-warning").innerText = "未填写学号！";
         isContain = false;
     } else if (!checkID(stuId)) {
+        document.getElementById("stu-search-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-search-notFound").style.display = "none";//隐藏警示栏
         document.getElementById("stu-search-warning").style.display = "";
         document.getElementById("stu-search-warning").innerText = "学号格式不正确！";
         isValue = false;
@@ -279,10 +283,16 @@ function stuChangeShow() {
     //判断表单是否为空,然后再判断输入格式是否正确
 
     if (stuId == "") {
+        document.getElementById("stu-change-notFound").style.display = "none";//隐藏警示栏
+        document.getElementById("stu-change-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-change-change").style.display = "none";//隐藏修改栏
         document.getElementById("stu-change-warning").style.display = "";
         document.getElementById("stu-change-warning").innerText = "未填写学号！";
         isContain = false;
     } else if (!checkID(stuId)) {
+        document.getElementById("stu-change-notFound").style.display = "none";//隐藏警示栏
+        document.getElementById("stu-change-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-change-change").style.display = "none";//隐藏修改栏
         document.getElementById("stu-change-warning").style.display = "";
         document.getElementById("stu-change-warning").innerText = "学号格式不正确！";
         isValue = false;
@@ -447,10 +457,16 @@ function stuDeleteShow() {
     //判断表单是否为空,然后再判断输入格式是否正确
 
     if (stuId == "") {
+        document.getElementById("stu-delete-notFound").style.display = "none";//隐藏警示栏
+        document.getElementById("stu-delete-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-delete-check").style.display = "none";//隐藏确认栏
         document.getElementById("stu-delete-warning").style.display = "";
         document.getElementById("stu-delete-warning").innerText = "未填写学号！";
         isContain = false;
     } else if (!checkID(stuId)) {
+        document.getElementById("stu-delete-notFound").style.display = "none";//隐藏警示栏
+        document.getElementById("stu-delete-show").style.display = "none";//隐藏信息栏
+        document.getElementById("stu-delete-check").style.display = "none";//隐藏确认栏
         document.getElementById("stu-delete-warning").style.display = "";
         document.getElementById("stu-delete-warning").innerText = "学号格式不正确！";
         isValue = false;
