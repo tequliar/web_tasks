@@ -24,10 +24,10 @@
 }
 
 #bgimg-sm {
-    background-image: url("picture/backGround.jpg");
+    background-image: url("http://ots2ozzjq.bkt.clouddn.com/image/hyacinthee/backGround.jpg");
 }
 #bgimg-xs {
-    background-image: url("picture/backGround.jpg");
+    background-image: url("http://ots2ozzjq.bkt.clouddn.com/image/hyacinthee/backGround.jpg");
 }
 
 .headh1content {
@@ -50,7 +50,6 @@
 .pageTwo {
     padding: 2px 0 0 2px;
     height: auto;
-    background-image: url("picture");
     position: relative;
 }
 
