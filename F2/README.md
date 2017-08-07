@@ -9,9 +9,9 @@
 
 - 支持[自动播放](https://github.com/hyacinthee/web_tasks/tree/master/F2#自动播放)/[响应式布局](https://github.com/hyacinthee/web_tasks/tree/master/F2#响应式布局)/[指定图片跳转](https://github.com/hyacinthee/web_tasks/tree/master/F2#指定图片跳转)/[键盘操控](https://github.com/hyacinthee/web_tasks/tree/master/F2#键盘操控)/[图片前后移动](https://github.com/hyacinthee/web_tasks/tree/master/F2#图片前后移动)/[触屏滑动](https://github.com/hyacinthee/web_tasks/tree/master/F2#触屏滑动)等功能，当鼠标位于图片上方时停止自动播放
 
-- 具有**[可定制性](https://github.com/hyacinthee/web_tasks/tree/master/F2#可定制性)**，插件提供参数，允许用户对轮播图的相关属性进行设置，主要包括设置图片切换速度、图片停留时间，开启或关闭键盘控制、指示器显示和响应式布局
+- 具有[可定制性](https://github.com/hyacinthee/web_tasks/tree/master/F2#可定制性)，插件提供参数，允许用户对轮播图的相关属性进行设置，主要包括设置图片切换速度、图片停留时间，开启或关闭键盘控制、指示器显示和响应式布局
 
-- 具有**[健壮性](https://github.com/hyacinthee/web_tasks/tree/master/F2#创建插件)**，使用对象级别的插件开发，为插件定义私有作用域，防止外部代码访问插件内部以及插件污染全局变量，保证了插件的有效运行
+- 具有[健壮性](https://github.com/hyacinthee/web_tasks/tree/master/F2#创建插件)，使用对象级别的插件开发，为插件定义私有作用域，防止外部代码访问插件内部以及插件污染全局变量，保证了插件的有效运行
 
 - 采用预编译语言Less书写样式，通过编译生成css文件
 
