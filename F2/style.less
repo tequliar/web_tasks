@@ -1,0 +1,140 @@
+//**************************************以下定义一些变量和函数************************************************
+@colorPattern: #FFF; //设置颜色模式
+
+//设置自定义动画
+.transition(@place:background;@duration:1s;@function:opacity;@time:0.5s;) {
+  -webkit-transition: @place @duration, @function @time;
+  -moz-transition: @place @duration, @function @time;
+  -o-transition: @place @duration, @function @time;
+  transition: @place @duration, @function @time;
+}
+
+//设置文字属性
+.text-center() {
+  text-align: center;
+}
+
+.text-margin() {
+  margin: 20px;
+}
+
+//***************************************以下开始调整样式*******************************************************
+ul, ol {
+  padding: 0;
+}
+
+h2, h3, p {
+  .text-center;
+}
+
+.text, .more {
+  .text-margin;
+}
+
+.main {
+
+  padding: 20px 30px 30px;
+
+  width: 700px;
+
+  background: @colorPattern;
+
+  margin: auto;
+
+  border-radius: 3px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.banner {
+
+  position: relative;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  ul {
+
+    li {
+
+      float: left;
+
+      list-style: none;
+
+    }
+  }
+}
+
+#banner {
+
+  width: auto;
+
+  .dots {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 20px;
+
+    li {
+
+      display: inline-block;
+
+      width: 10px;
+
+      height: 10px;
+
+      margin: 0 4px;
+
+      text-indent: -999em;
+      //em表示文字的高度，由于汉字高度宽度一样，可以看作是文字宽度 text-indent表示文字缩进
+
+      border: 2px solid @colorPattern;
+
+      border-radius: 6px;
+
+      cursor: pointer; //设置鼠标光标样式——点击
+
+      opacity: 0.4; //透明度0.4
+
+      .transition;
+      //CSS动画，原点背景和透明度渐变0.5秒
+
+      &.active {
+
+        background: @colorPattern;
+
+        opacity: 1;
+
+        //设置动画激活时的背景色和透明度的变化
+      }
+    }
+  }
+  .arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+  }
+
+  #left {
+
+    left: 5%;
+
+  }
+
+  #right {
+
+    right: 5%;
+    
+  }
+}
+
+
+
