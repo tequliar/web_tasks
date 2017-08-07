@@ -7,11 +7,11 @@
 
 本插件参考Bootstrap的carousel等诸多轮播图样式，基于jQuery库实现，满足要求如下：
 
-- 支持自动播放/响应式布局/指定图片跳转/键盘操控/图片前后移动/触屏滑动等功能，当鼠标位于图片上方时停止自动播放
+- 支持[自动播放](https://github.com/hyacinthee/web_tasks/tree/master/F2#自动播放)/[响应式布局](https://github.com/hyacinthee/web_tasks/tree/master/F2#响应式布局)/[指定图片跳转](https://github.com/hyacinthee/web_tasks/tree/master/F2#指定图片跳转)/[键盘操控](https://github.com/hyacinthee/web_tasks/tree/master/F2#键盘操控)/[图片前后移动](https://github.com/hyacinthee/web_tasks/tree/master/F2#图片前后移动)/[触屏滑动](https://github.com/hyacinthee/web_tasks/tree/master/F2#触屏滑动)等功能，当鼠标位于图片上方时停止自动播放
 
-- 具有可定制性，插件提供参数，允许用户对轮播图的相关属性进行设置，主要包括设置图片切换速度、图片停留时间，开启或关闭键盘控制、指示器显示和响应式布局
+- 具有**[可定制性](https://github.com/hyacinthee/web_tasks/tree/master/F2#可定制性)**，插件提供参数，允许用户对轮播图的相关属性进行设置，主要包括设置图片切换速度、图片停留时间，开启或关闭键盘控制、指示器显示和响应式布局
 
-- 具有健壮性，使用对象级别的插件开发，为插件定义私有作用域，防止外部代码访问插件内部以及插件污染全局变量，保证了插件的有效运行
+- 具有**[健壮性](https://github.com/hyacinthee/web_tasks/tree/master/F2#创建插件)**，使用对象级别的插件开发，为插件定义私有作用域，防止外部代码访问插件内部以及插件污染全局变量，保证了插件的有效运行
 
 - 采用预编译语言Less书写样式，通过编译生成css文件
 
@@ -97,17 +97,20 @@ $(document).ready(function (e) {
 
 ```
 this.move = function (target, allowed) {
-            if (!this.items.eq(target).length) target = 0;  //取出index为target的li标签，如果当前div的所含元素个数为0，则将t设为0
-            if (target < 0) target = this.items.length - 1; //如果target的值小于0，则将target设为li标签个数减一(及最后一张图)
-            var li = this.items.eq(target);  //获取index为t的li标签
-            var movePattern = {height: li.outerHeight()};  //移动模式，此时获取div的外部高度
-            var moveSpeed = allowed ? 5 : this.opts.speed;//对r做判断，如果是则切换速度为5，否则为正常的切换速度
-            if (!this.ul.is(":animated")) {//判断元素是否处于动画状态,当当前ul对象不处于动画时继续执行，防止因为延迟而出现移动多次的情况
+            //取出index为target的li标签，如果当前div的所含元素个数为0，则将target设为0
+            if (!this.items.eq(target).length) target = 0; 
+            //如果target的值小于0，则将target设为li标签个数减一(及最后一张图)
+            if (target < 0) target = this.items.length - 1; 
+            var li = this.items.eq(target);     //获取index为t的li标签
+            var movePattern = {height: li.outerHeight()};       //移动模式，此时获取div的外部高度
+            var moveSpeed = allowed ? 5 : this.opts.speed;      //对r做判断，如果是则切换速度为5，否则为正常的切换速度
+            //判断元素是否处于动画状态,当当前ul对象不处于动画时继续执行，防止因为延迟而出现移动多次的情况
+            if (!this.ul.is(":animated")) {
                 //找到第t个节点,使其处于激活状态；返回当前所有处于激活状态的同级元素，并将其激活状态清除
                 carousel.element.find(".dot:eq(" + target + ")").addClass("active").siblings().removeClass("active");
                 //调用animate()方法执行CSS属性集的自定义动画，调整div的宽度，同时移动图片
                 this.element.animate(movePattern, moveSpeed) && this.ul.animate(e.extend({left: "-" + target + "00%"}, movePattern), moveSpeed, function (li) {
-                    carousel.current = target; //将当前图片的index设置为target
+                    carousel.current = target;      //将当前图片的index设置为target
                 })
             }
         };
@@ -117,6 +120,36 @@ this.move = function (target, allowed) {
 - 通过:animated选择器判断元素是否处于动画状态，防止因网络延迟而出现的重复移动
 - 通过addClass()方法激活相应指示器，通过siblings()和removeClass()方法识别并取消其它指示器的激活状态
 - 通过animate方法执行自定义动画，移动图片并调整宽高
+
+### 图片前后移动  
+
+通过实现next()和prev()方法进行图片的前后移动  
+
+```
+//公有方法，下一张图
+this.next = function () {
+    return carousel.stop().move(carousel.current + 1)
+};
+
+//公有方法，上一张图
+this.prev = function () {
+    return carousel.stop().move(carousel.current - 1)
+};
+```
+
+实质是通过调用move()方法进行图片跳转
+
+然后为左右箭头绑定事件  
+
+```
+$('.carousel-arrow').click(function () {
+
+    var fn = this.className.split(' ')[1];
+    mydata[fn]();
+    
+ });
+```
+根据相应的类名决定前进还是后退
 
 ### 自动播放
 
@@ -212,10 +245,10 @@ if (this.opts.fluid) {  //如果允许响应式布局
 
 ## 文件链接
 
-#### [carousel插件]()
+#### [carousel插件](https://github.com/hyacinthee/web_tasks/blob/master/F2/carousel.js)
 
-#### [简单实例]()
+#### [简单实例](https://github.com/hyacinthee/web_tasks/blob/master/F2/index.html)
 
-#### [Less样式表]()
+#### [Less样式表](https://github.com/hyacinthee/web_tasks/blob/master/F2/style.less)
 
-#### [css样式表]()
+#### [css样式表](https://github.com/hyacinthee/web_tasks/blob/master/F2/style.css)
