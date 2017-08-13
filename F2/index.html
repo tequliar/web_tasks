@@ -5,9 +5,10 @@
 <head>
     <meta charset="utf-8">
     <title>自制轮播图</title>
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="jQuery.event.swipe.js"></script>
-    <!--用来支持移动端触屏滑动-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--jQuery Mobile用来支持移动端触屏滑动-->
     <script src="carousel.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -107,7 +108,9 @@
 
                 dots: true,
 
-                fluid: true
+                fluid: true,
+            
+                swipe: true
 
             }),//调用carousel，并传入参数表示允许显示指示器和响应式布局
 
