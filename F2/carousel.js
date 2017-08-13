@@ -14,9 +14,9 @@
         this.max = [0, 0];  //第一个参数表示最大宽度，第二个参数表示最大高度
         this.current = 0;   //current表示当前图片的index
         this.interval = t;  //用于记录setInterval()返回的ID值
-        this.opts = {speed: 500, delay: 2500, keys: !t, dots: t, fluid: t};
-        //speed表示图片切换的速度,delay表示图片停留的时间,
-        //keys表示是否接受键盘控制,dots表示是否显示指示器,fluid表示是否支持响应式布局
+        this.opts = {speed: 500, delay: 2500, keys: !t, dots: t, fluid: t, swipe: t};
+        //speed表示图片切换的速度,delay表示图片停留的时间,keys表示是否接受键盘控制,
+        //dots表示是否显示指示器,fluid表示是否支持响应式布局,swipe表示是否允许触摸滑动
         var carousel = this;
 
         //*********************************************类的构造方法**********************************************************
@@ -83,20 +83,14 @@
                 e(window).resize(setPictureSize);//当调整浏览器窗口的大小时，发生 resize 事件，将r事件与其绑定。一旦发生大小改变，则触发事件
             }
 
-            //如果支持箭头
-            if (this.opts.arrows) {
-                //调用append()方法在被选元素的父级元素结尾插入内容
-                //调用find()方法对子代所有类名为arrows span的标签进行遍历
-                //对所有遍历到的标签添加事件click
-                this.element.parent().append('<p class="arrows"><span class="prev">←</span><span class="next">→</span></p>').find(".arrows span").click(function () {
-                    e.isFunction(carousel[this.className]) && carousel[this.className]();
-                    //调用isFunction()判断是否为函数
-                })
-            }
-
-            //调用jQuery Mobile的swipe事件，用于支持移动端的操作
-            if (e.event.swipe) {
-                this.element.on("swipeleft", carousel.prev).on("swiperight", carousel.next);
+            //如果允许触屏滑动
+            if (this.opts.swipe) {
+                this.element.on("swipeleft",function () {
+                    carousel.next();
+                });
+                this.element.on("swiperight",function () {
+                    carousel.prev();
+                });
             }
         };
 
