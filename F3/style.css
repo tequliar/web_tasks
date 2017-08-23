@@ -1,0 +1,70 @@
+.container {
+    margin: 30px auto;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.color-fields {
+    width: 300px;
+    height: 300px;
+    cursor: crosshair;
+}
+
+.color-fields-canvas {
+    display: inline-block;
+    position: relative;
+}
+
+.color-circle-selector {
+    display: inline-block;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    background: url("http://ots2ozzjq.bkt.clouddn.com/image/hyacinthee/web_tasks/F3/colpick_select.gif");
+    margin: -5px 0 0 10px;
+    width: 11px;
+    height: 11px;
+}
+
+.color-bar {
+    margin: auto;
+    width: 25px;
+    height: 300px;
+    cursor: n-resize;
+}
+
+.color-indic {
+    position: absolute;
+    top: 0px;
+    right: 31px;
+    width: 35px;
+    height: 9px;
+    margin: -4px 0 0 0;
+    overflow: hidden;
+    background: url("http://ots2ozzjq.bkt.clouddn.com/image/hyacinthee/web_tasks/F3/colpick_indic.gif") left top;
+}
+
+.color-selected {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+}
+
+.color-number span {
+    position: relative;
+    top:7px;
+    right: 45px;
+    width: 11px;
+    height: 20px;
+    overflow: hidden;
+
+    cursor: n-resize;
+    background: url("http://ots2ozzjq.bkt.clouddn.com/image/hyacinthee/web_tasks/F3/colpick_arrows.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
